@@ -8,7 +8,7 @@ int main() {
 	cout << "sum = "<<(a+b) << endl;
 	cout << "diff = "<<(a-b) << endl;
 	cout << "multiply = "<<(a*b) << endl;
-	cout << "product = "<<(a/b) << endl;
+	cout << "Quotient = "<<(a/b) << endl;
 
 	cout << "SHA256 will be outdate soon";
 
