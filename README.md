@@ -21,15 +21,46 @@ int main() {
 
 using namespace std;
 
-const double G = 6.67430e-11;   // Gravitational constant
-const double BH_MASS = 1e30;    // Mass of black hole
-const double EVENT_HORIZON = 50.0; // Radius where particles disappear
-const double DT = 0.1;          // Time step
+const double G = 6.67430e-11;  
+const double BH_MASS = 1e30;    
+const double EVENT_HORIZON = 50.0; 
+const double DT = 0.1;          
 
 struct Particle {
     double x, y;
     double vx, vy;
     bool alive;
 };
+
+
+
+double distance(double x, double y) {
+    return sqrt(x*x + y*y);
+}
+
+
+void updateParticle(Particle &p) {
+    double r = distance(p.x, p.y);
+
+    if (r < EVENT_HORIZON) {
+        p.alive = false;
+        return;
+    }
+
+    // Gravitational force magnitude
+    double force = (G * BH_MASS) / (r * r);
+
+    // Direction towards center
+    double ax = -force * (p.x / r);
+    double ay = -force * (p.y / r);
+
+    // Update velocity
+    p.vx += ax * DT;
+    p.vy += ay * DT;
+
+    // Update position
+    p.x += p.vx * DT;
+    p.y += p.vy * DT;
+}
 
 
