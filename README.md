@@ -64,3 +64,16 @@ void updateParticle(Particle &p) {
 }
 
 
+int main() {
+    vector<Particle> particles;
+
+    
+    for (int i = 0; i < 10; i++) {
+        Particle p;
+        p.x = 200 + i * 20;
+        p.y = 0;
+        p.vx = 0;
+        p.vy = 1000; // initial tangential velocity
+        p.alive = true;
+        particles.push_back(p);
+    }
