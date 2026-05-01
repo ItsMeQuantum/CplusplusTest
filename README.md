@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    // This statement prints "Hello World"
+    "Hello World"
     cout << "Hello World";
 
     return 0;
@@ -77,3 +77,21 @@ int main() {
         p.alive = true;
         particles.push_back(p);
     }
+
+
+
+    for (int t = 0; t < 500; t++) {
+        cout << "Step " << t << endl;
+
+        for (auto &p : particles) {
+            if (p.alive) {
+                updateParticle(p);
+                cout << "Particle: (" << p.x << ", " << p.y << ")\n";
+            }
+        }
+
+        cout << "----------------------\n";
+    }
+
+    return 0;
+}
