@@ -1,4 +1,15 @@
 # CplusplusTest
 
-Demo  
-start learning abou the DSA in C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    // This statement prints "Hello World"
+    cout << "Hello World";
+
+    return 0;
+}
+
+
+
+
